@@ -26,3 +26,10 @@ include:
     shield: splitkb_aurora_lily58_right
     cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: firmware-dactyl_right
+  - board: nice_nano_v2
+    shield: sofle_left
+    artifact-name: firmware-sofle_left
+  - board: nice_nano_v2
+    shield: sofle_right
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: firmware-sofl_right
