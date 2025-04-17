@@ -1,8 +1,8 @@
 file_format: "1"
-id: sofle
-name: Sofle
+id: cosmos_dactyl
+name: CosmosDactyl
 type: shield
-url: https://github.com/josefadamcik/SofleKeyboard
+url: https://github.com/rtward/zmk-config
 requires: [pro_micro]
 exposes: [i2c_oled]
 features:
@@ -12,5 +12,5 @@ features:
   - underglow
   - studio
 siblings:
-  - sofle_left
-  - sofle_right
+  - cosmos_dactyl_left
+  - cosmos_dactyl_right
