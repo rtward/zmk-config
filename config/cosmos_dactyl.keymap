@@ -10,6 +10,7 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/backlight.h>
 
 #define BASE 0
 #define LOWER 1
@@ -17,6 +18,15 @@
 #define ADJUST 3
 
 / {
+    
+    behaviors {
+        tdrst: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&sys_reset>, <&bootloader>;
+        };
+    };
 
    // Activate ADJUST layer by pressing raise and lower
     conditional_layers {
@@ -33,11 +43,11 @@
         default_layer {
             display-name = "default";
             bindings = <
-&kp EQUAL &kp N1    &kp N2    &kp N3   &kp N4    &kp N5        &kp N6    &kp N7     &kp N8    &kp N9    &kp N0   &kp MINUS
-&kp TAB   &kp Q     &kp W     &kp E    &kp R     &kp T         &kp Y     &kp U      &kp I     &kp O     &kp P    &kp BSPC
-&kp LCTRL &kp A     &kp S     &kp D    &kp F     &kp G         &kp H     &kp J      &kp K     &kp L     &kp SEMI &kp SQT
-&kp LSHFT &kp Z     &kp X     &kp C    &kp V     &kp B         &kp N     &kp M      &kp COMMA &kp DOT   &kp FSLH &kp RSHFT
-&none     &kp GRAVE &kp NUBS  &none                                                 &none     &kp LBKT  &kp RBKT &none
+&kp EQUAL &kp N1    &kp N2    &kp N3   &kp N4    &kp N5        &kp N6    &kp N7     &kp N8     &kp N9    &kp N0   &kp MINUS
+&kp TAB   &kp Q     &kp W     &kp E    &kp R     &kp T         &kp Y     &kp U      &kp I      &kp O     &kp P    &kp BSPC
+&kp LCTRL &kp A     &kp S     &kp D    &kp F     &kp G         &kp H     &kp J      &kp K      &kp L     &kp SEMI &kp SQT
+&kp LSHFT &kp Z     &kp X     &kp C    &kp V     &kp B         &kp N     &kp M      &kp COMMA  &kp DOT   &kp FSLH &kp RSHFT
+&tdrst    &kp GRAVE &kp NUBS  &studio_unlock                                        &bl BL_TOG &kp LBKT  &kp RBKT &bootloader
 
 &kp LGUI  &mkp MCLK &mkp RCLK &kp BSPC &mo LOWER &mkp LCLK      &kp RET   &mo RAISE  &kp RALT  &kp SPACE &mo RAISE  &none
             >;

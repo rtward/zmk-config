@@ -1,3 +1,4 @@
+rm -rf firmware
 mkdir -p firmware
 
 rm -rf build
