@@ -1,7 +1,13 @@
 rm -rf firmware
 mkdir -p firmware
-
 rm -rf build
+
+podman run -it --rm \
+  --security-opt label=disable \
+  --workdir /workspaces/zmk \
+  -v ~/Workspace/Personal/zmk/:/workspaces/ \
+  -p 3000:3000 \
+  zmk west update 
 
 podman run -it --rm \
   --security-opt label=disable \
@@ -13,7 +19,7 @@ podman run -it --rm \
   -d "/workspaces/build" \
   -b "nice_nano_v2" \
   -- \
-  -DSHIELD="settings_reset" \
+  -DSHIELD="settings_reset"
 
 cp build/zephyr/zmk.uf2 firmware/reset.uf2
 
