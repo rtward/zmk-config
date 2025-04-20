@@ -1,6 +1,21 @@
 #include <dt-bindings/led/led.h>
 
 &pinctrl {
+    spi0_default: spi0_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 6)>;
+        };
+    };
+
+    spi0_sleep: spi0_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 6)>;
+            low-power-enable;
+        };
+    };
+};
+
+&pinctrl {
     spi3_default: spi3_default {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 8)>,
@@ -21,15 +36,13 @@
 
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
-&spi3 {
+&spi0 {
     compatible = "nordic,nrf-spim";
     status = "okay";
 
-    pinctrl-0 = <&spi3_default>;
-    pinctrl-1 = <&spi3_sleep>;
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
-    
-    cs-gpios = <&gpio0 21 GPIO_ACTIVE_LOW>;
 
     led_strip: ws2812@0 {
         compatible = "worldsemi,ws2812-spi";
@@ -49,6 +62,23 @@
             LED_COLOR_ID_BLUE
         >;
     };
+};
+
+/ {
+    chosen {
+        zmk,underglow = &led_strip;
+    };
+};
+
+&spi3 {
+    compatible = "nordic,nrf-spim";
+    status = "okay";
+
+    pinctrl-0 = <&spi3_default>;
+    pinctrl-1 = <&spi3_sleep>;
+    pinctrl-names = "default", "sleep";
+    
+    cs-gpios = <&gpio0 21 GPIO_ACTIVE_LOW>;
     
     trackball: trackball@0 {
         status = "okay";
@@ -66,7 +96,9 @@
 };
 
 / {
-    chosen {
-        zmk,underglow = &led_strip;
-    };
+  trackball_listener {
+    compatible = "zmk,input-listener";
+    device = <&trackball>;
+  };
 };
+
