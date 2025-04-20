@@ -10,7 +10,7 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/backlight.h>
+#include <dt-bindings/zmk/rgb.h>
 
 #define BASE 0
 #define LOWER 1
@@ -47,9 +47,9 @@
 &kp TAB   &kp Q     &kp W     &kp E    &kp R     &kp T         &kp Y     &kp U      &kp I      &kp O     &kp P    &kp BSPC
 &kp LCTRL &kp A     &kp S     &kp D    &kp F     &kp G         &kp H     &kp J      &kp K      &kp L     &kp SEMI &kp SQT
 &kp LSHFT &kp Z     &kp X     &kp C    &kp V     &kp B         &kp N     &kp M      &kp COMMA  &kp DOT   &kp FSLH &kp RSHFT
-&tdrst    &kp GRAVE &kp NUBS  &studio_unlock                                        &bl BL_TOG &kp LBKT  &kp RBKT &bootloader
+&tdrst    &kp GRAVE &kp NUBS  &studio_unlock                                        &none      &kp LBKT  &kp RBKT &bootloader
 
-&kp LGUI  &mkp MCLK &mkp RCLK &kp BSPC &mo LOWER &mkp LCLK      &kp RET   &mo RAISE  &kp RALT  &kp SPACE &mo RAISE  &none
+&kp LGUI  &rgb_ug RGB_TOG &mkp RCLK &kp BSPC &mo LOWER &mkp LCLK      &kp RET   &mo RAISE  &kp RALT  &kp SPACE &mo RAISE  &none
             >;
         };
 
