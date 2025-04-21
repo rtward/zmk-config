@@ -7,13 +7,6 @@ podman run -it --rm \
   --workdir /workspaces/zmk \
   -v ~/Workspace/Personal/zmk/:/workspaces/ \
   -p 3000:3000 \
-  zmk west init
-
-podman run -it --rm \
-  --security-opt label=disable \
-  --workdir /workspaces/zmk \
-  -v ~/Workspace/Personal/zmk/:/workspaces/ \
-  -p 3000:3000 \
   zmk west update 
 
 podman run -it --rm \
