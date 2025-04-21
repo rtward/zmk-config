@@ -16,3 +16,10 @@
         , <&pro_micro 10 GPIO_ACTIVE_HIGH>
         ;
 };
+
+/ {
+  trackball_listener {
+    compatible = "zmk,input-listener";
+    device = <&trackball>;
+  };
+};
