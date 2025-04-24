@@ -150,9 +150,10 @@ RC(5,0) RC(5,1) RC(5,2) RC(5,3) RC(5,4) RC(5,5)                 RC(6,6) RC(6,7) 
         inversion-on;
         prechargep = <0x22>;
     };
-};
 
-//right hand trackball
+    // Cribbed from https://github.com/Cyboard-DigitalTailor/zmk-keyboards/tree/main
+
+    //right hand trackball
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
@@ -169,9 +170,10 @@ RC(5,0) RC(5,1) RC(5,2) RC(5,3) RC(5,4) RC(5,5)                 RC(6,6) RC(6,7) 
         device = <&trackball_peripheral_split>;
     };
 
-//left hand trackball
+    //left hand trackball
     scrollball_listener: scrollball_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
         input-processors =  <&zip_xy_to_scroll_mapper>;
     };
+};
