@@ -46,8 +46,6 @@
     };
 };
 
-/ {
-  trackball_listener_split {
-    device = <&trackball_right>;
-  };
+@trackball_listener_split {
+  device = <&trackball_right>;
 };
