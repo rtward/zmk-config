@@ -17,16 +17,15 @@
         ;
 };
 
+&trackball_listener {
+  status = "okay";
+};
+
 #include <input/processors.dtsi>
 
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
 &spi1 {
-    status = "okay";
-    compatible = "nordic,nrf-spim";
-    pinctrl-0 = <&spi1_default>;
-    pinctrl-1 = <&spi1_sleep>;
-    pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio1 7 GPIO_ACTIVE_LOW>;
 
     trackball_left: trackball_left@0 {
