@@ -21,8 +21,6 @@
   status = "okay";
 };
 
-#include <input/processors.dtsi>
-
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
 &spi1 {
@@ -48,8 +46,7 @@
 
 / {
   scrollball_listener {
-    compatible = "zmk,input-listener";
+    status = "okay";
     device = <&trackball_left>;
-    input-processors =  <&zip_xy_to_scroll_mapper>;
   };
 };
