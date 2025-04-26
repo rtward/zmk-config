@@ -11,12 +11,12 @@
 #include <input/processors.dtsi>
 
 / {
-    cosmos_dactyl_layout: cosmos_dactyl_layout {
+    physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
-        display-name = "Cosmos Dactyl";
+        display-name = "LAYOUT";
 
         kscan = <&kscan0>;
-        transform = <&default_transform>;
+        transform = <&matrix_transform0>;
 
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 125 100    0  128       0     0     0>
@@ -25,71 +25,66 @@
             , <&key_physical_attrs 100 100  335    0     100   385    50>
             , <&key_physical_attrs 100 100  426   62     100   476   112>
             , <&key_physical_attrs 100 100  517   63     100   567   113>
-            , <&key_physical_attrs 100 100 1414   63  (-100)  1464   113>
-            , <&key_physical_attrs 100 100 1504   62  (-100)  1554   112>
-            , <&key_physical_attrs 100 100 1595    0  (-100)  1645    50>
-            , <&key_physical_attrs 100 100 1699   50       0     0     0>
-            , <&key_physical_attrs 100 100 1806  126       0     0     0>
-            , <&key_physical_attrs 125 100 1931  128       0     0     0>
+            , <&key_physical_attrs 100 100 1394   63  (-100)  1444   113>
+            , <&key_physical_attrs 100 100 1485   62  (-100)  1535   112>
+            , <&key_physical_attrs 100 100 1576    0  (-100)  1626    50>
+            , <&key_physical_attrs 100 100 1679   50       0     0     0>
+            , <&key_physical_attrs 100 100 1786  126       0     0     0>
+            , <&key_physical_attrs 125 100 1911  128       0     0     0>
             , <&key_physical_attrs 125 100    9  233       0     0     0>
             , <&key_physical_attrs 100 100  138  231       0     0     0>
             , <&key_physical_attrs 100 100  249  155       0     0     0>
             , <&key_physical_attrs 100 100  356  105     100   406   155>
             , <&key_physical_attrs 100 100  450  168     100   500   218>
             , <&key_physical_attrs 100 100  543  169     100   593   219>
-            , <&key_physical_attrs 100 100 1387  169  (-100)  1437   219>
-            , <&key_physical_attrs 100 100 1481  168  (-100)  1531   218>
-            , <&key_physical_attrs 100 100 1575  105  (-100)  1625   155>
-            , <&key_physical_attrs 100 100 1682  155       0     0     0>
-            , <&key_physical_attrs 100 100 1793  231       0     0     0>
-            , <&key_physical_attrs 125 100 1922  233       0     0     0>
+            , <&key_physical_attrs 100 100 1368  169  (-100)  1418   219>
+            , <&key_physical_attrs 100 100 1461  168  (-100)  1511   218>
+            , <&key_physical_attrs 100 100 1555  105  (-100)  1605   155>
+            , <&key_physical_attrs 100 100 1662  155       0     0     0>
+            , <&key_physical_attrs 100 100 1773  231       0     0     0>
+            , <&key_physical_attrs 125 100 1902  233       0     0     0>
             , <&key_physical_attrs 125 100   12  347       0     0     0>
             , <&key_physical_attrs 100 100  142  345       0     0     0>
             , <&key_physical_attrs 100 100  254  269       0     0     0>
             , <&key_physical_attrs 100 100  363  219     100   413   269>
             , <&key_physical_attrs 100 100  458  281     100   508   331>
             , <&key_physical_attrs 100 100  552  282     100   602   332>
-            , <&key_physical_attrs 100 100 1378  282  (-100)  1428   332>
-            , <&key_physical_attrs 100 100 1473  281  (-100)  1523   331>
-            , <&key_physical_attrs 100 100 1568  219  (-100)  1618   269>
-            , <&key_physical_attrs 100 100 1676  269       0     0     0>
-            , <&key_physical_attrs 100 100 1788  345       0     0     0>
-            , <&key_physical_attrs 125 100 1918  347       0     0     0>
+            , <&key_physical_attrs 100 100 1359  282  (-100)  1409   332>
+            , <&key_physical_attrs 100 100 1453  281  (-100)  1503   331>
+            , <&key_physical_attrs 100 100 1548  219  (-100)  1598   269>
+            , <&key_physical_attrs 100 100 1656  269       0     0     0>
+            , <&key_physical_attrs 100 100 1769  345       0     0     0>
+            , <&key_physical_attrs 125 100 1899  347       0     0     0>
             , <&key_physical_attrs 125 100    9  461       0     0     0>
             , <&key_physical_attrs 100 100  138  459       0     0     0>
             , <&key_physical_attrs 100 100  249  383       0     0     0>
             , <&key_physical_attrs 100 100  356  333     100   406   383>
             , <&key_physical_attrs 100 100  450  395     100   500   445>
             , <&key_physical_attrs 100 100  543  396     100   593   446>
-            , <&key_physical_attrs 100 100 1387  396  (-100)  1437   446>
-            , <&key_physical_attrs 100 100 1481  395  (-100)  1531   445>
-            , <&key_physical_attrs 100 100 1575  333  (-100)  1625   383>
-            , <&key_physical_attrs 100 100 1682  383       0     0     0>
-            , <&key_physical_attrs 100 100 1793  459       0     0     0>
-            , <&key_physical_attrs 125 100 1922  461       0     0     0>
+            , <&key_physical_attrs 100 100 1368  396  (-100)  1418   446>
+            , <&key_physical_attrs 100 100 1461  395  (-100)  1511   445>
+            , <&key_physical_attrs 100 100 1555  333  (-100)  1605   383>
+            , <&key_physical_attrs 100 100 1662  383       0     0     0>
+            , <&key_physical_attrs 100 100 1773  459       0     0     0>
+            , <&key_physical_attrs 125 100 1902  461       0     0     0>
             , <&key_physical_attrs 125 100    0  568       0     0     0>
             , <&key_physical_attrs 100 100  125  566       0     0     0>
             , <&key_physical_attrs 100 100  232  489       0     0     0>
             , <&key_physical_attrs 100 100  335  440     100   385   490>
-            , <&key_physical_attrs 100 100 1595  440  (-100)  1645   490>
-            , <&key_physical_attrs 100 100 1699  489       0     0     0>
-            , <&key_physical_attrs 100 100 1806  566       0     0     0>
-            , <&key_physical_attrs 125 100 1931  568       0     0     0>
+            , <&key_physical_attrs 100 100 1576  440  (-100)  1626   490>
+            , <&key_physical_attrs 100 100 1679  489       0     0     0>
+            , <&key_physical_attrs 100 100 1786  566       0     0     0>
+            , <&key_physical_attrs 125 100 1911  568       0     0     0>
+            , <&key_physical_attrs 150 100  480  553   11000   530   603>
             , <&key_physical_attrs 150 100  593  543   11000   643   593>
             , <&key_physical_attrs 100 100  686  600    4000   736   650>
-            , <&key_physical_attrs 100 100  718  692    5200   768   742>
-            , <&key_physical_attrs 150 100  480  553   11000   530   603>
-            , <&key_physical_attrs 100 100  569  684    4800   619   734>
-            , <&key_physical_attrs 100 100  615  759    5400   665   809>
-            , <&key_physical_attrs 150 100 1337  543 (-11000)  1387   593>
-            , <&key_physical_attrs 100 100 1245  600 (-4000)  1295   650>
-            , <&key_physical_attrs 100 100 1213  692 (-5200)  1263   742>
-            , <&key_physical_attrs 150 100 1451  553 (-11000)  1501   603>
-            , <&key_physical_attrs 100 100 1362  684 (-4800)  1412   734>
-            , <&key_physical_attrs 100 100 1316  759 (-5400)  1366   809>
+            , <&key_physical_attrs 100 100 1225  600 (-4000)  1275   650>
+            , <&key_physical_attrs 150 100 1318  543 (-11000)  1368   593>
+            , <&key_physical_attrs 150 100 1431  553 (-11000)  1481   603>
             ;
     };
 };
+
 
 / {
     chosen {
@@ -112,7 +107,7 @@ RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5)                 RC(1,6) RC(1,7) 
 RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)                 RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10) RC(2,11)
 RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)                 RC(3,6) RC(3,7) RC(3,8) RC(3,9) RC(3,10) RC(3,11)
 RC(4,0) RC(4,1) RC(4,2) RC(4,3)                                                 RC(4,8) RC(4,9) RC(4,10) RC(4,11)
-RC(5,0) RC(5,1) RC(5,2) RC(5,3) RC(5,4) RC(5,5)                 RC(5,6) RC(5,7) RC(5,8) RC(5,9) RC(5,10) RC(5,11)
+RC(5,0) RC(5,1) RC(5,2)                                                                 RC(5,9) RC(5,10) RC(5,11)
         >;
     };
     
