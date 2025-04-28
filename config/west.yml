@@ -2,15 +2,28 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+      
+    # support for pmw3610 driver for the trackballs
     - name: badjeff
       url-base: https://github.com/badjeff
+
+    # support nice_oled and nice_epaper
+    - name: mctechnology17
+      url-base: https://github.com/mctechnology17
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+
+    # support for pmw3610 driver for the trackballs
     - name: zmk-pmw3610-driver
       remote: badjeff
+      revision: main
+    
+    # support nice_oled and nice_epaper
+    - name: zmk-nice-oled
+      remote: mctechnology17
       revision: main
   self:
     path: config
