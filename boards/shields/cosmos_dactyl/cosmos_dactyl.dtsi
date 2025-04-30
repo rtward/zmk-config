@@ -149,7 +149,7 @@ RC(5,0) RC(5,1) RC(5,2)                                                         
     scrollball_listener: scrollball_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
-        input-processors =  <&zip_xy_to_scroll_mapper &zip_scroll_scaler 1 5>;
+        input-processors =  <&zip_xy_scaler 1 4 &zip_xy_to_scroll_mapper>;
     };
 };
 
