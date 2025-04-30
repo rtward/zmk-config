@@ -44,9 +44,11 @@
     };
 };
 
+/*
 / {
   scrollball_listener {
     status = "okay";
     device = <&trackball_left>;
   };
 };
+*/
