@@ -6,19 +6,15 @@ include:
 
   - board: nice_nano_v2
     shield: cosmos_dactyl_left nice_oled
-    snippet: studio-rpc-usb-uart zmk-usb-logging
-    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_POINTING=y
+    cmake-args: -DCONFIG_ZMK_POINTING=y
     artifact-name: firmware-dactyl_left
   - board: nice_nano_v2
     shield: cosmos_dactyl_right nice_oled
-    snippet: zmk-usb-logging
-    artifact-name: firmware-dactyl_right
     cmake-args: -DCONFIG_ZMK_POINTING=y
+    artifact-name: firmware-dactyl_right
 
   - board: nice_nano_v2
     shield: sofle_left
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: firmware-sofle_left
   - board: nice_nano_v2
     shield: sofle_right
