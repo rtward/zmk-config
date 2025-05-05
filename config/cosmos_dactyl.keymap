@@ -24,6 +24,17 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+        };
+
+        mod_tap_or_repeat: mod_tap_or_repeat {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOD_TAP_OR_REPEAT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
         };
     };
 
@@ -33,24 +44,24 @@
         default_layer {
             display-name = "default";
             bindings = <
-&kp EQUAL            &kp N1            &kp N2     &kp N3    &kp N4  &kp N5  &kp N6  &kp N7  &kp N8     &kp N9    &kp N0                   &kp MINUS
-&kp TAB              &kp Q             &kp W      &kp E     &kp R   &kp T   &kp Y   &kp U   &kp I      &kp O     &kp P                    &kp BACKSLASH
-&kp ESCAPE           &kp A             &kp S      &kp D     &kp F   &kp G   &kp H   &kp J   &kp K      &kp L     &kp SEMI                 &kp SQT
-&kp LSHFT            &kp Z             &kp X      &kp C     &kp V   &kp B   &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH                 &kp RSHFT
-&kp LCTRL            &kp GRAVE         &kp NUBS   &kp LALT                                  &kp RALT   &kp LBKT  &kp RBKT                 &kp RCTRL
-&mt LCTRL BACKSPACE  &kp LEFT_COMMAND  &kp LCTRL                                                       &mo 1     &hold_for_layer 1 ENTER  &kp SPACE
+&kp EQUAL                           &kp N1            &kp N2    &kp N3    &kp N4  &kp N5  &kp N6  &kp N7  &kp N8     &kp N9    &kp N0                   &kp MINUS
+&kp TAB                             &kp Q             &kp W     &kp E     &kp R   &kp T   &kp Y   &kp U   &kp I      &kp O     &kp P                    &kp BACKSLASH
+&kp ESCAPE                          &kp A             &kp S     &kp D     &kp F   &kp G   &kp H   &kp J   &kp K      &kp L     &kp SEMI                 &kp SQT
+&kp LSHFT                           &kp Z             &kp X     &kp C     &kp V   &kp B   &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH                 &kp RSHFT
+&kp LCTRL                           &kp GRAVE         &kp NUBS  &kp LALT                                  &kp RALT   &kp LBKT  &kp RBKT                 &kp RCTRL
+&mod_tap_or_repeat LCTRL BACKSPACE  &kp LEFT_COMMAND  &none                                                          &none     &hold_for_layer 1 ENTER  &kp SPACE
             >;
         };
 
         lower_layer {
             display-name = "movement";
             bindings = <
-&none  &kp F1   &kp F2     &kp F3     &kp F4     &kp F5  &kp F6          &kp F7         &kp F8        &kp F9           &kp F10    &none
-&none  &kp F11  &kp F12    &none      &none      &none   &none           &kp PAGE_DOWN  &kp PAGE_UP   &none            &none      &none
-&none  &none    &mkp RCLK  &mkp MCLK  &mkp LCLK  &none   &kp LEFT_ARROW  &kp DOWN       &kp UP_ARROW  &kp RIGHT_ARROW  &none      &none
-&none  &none    &none      &none      &none      &none   &none           &none          &none         &none            &kp LC(F)  &none
-&none  &none    &none      &none                                                        &none         &none            &none      &none
-&mo 2  &trans   &trans                                                                                &trans           &trans     &trans
+&none   &kp F1     &kp F2     &kp F3     &kp F4     &kp F5  &kp F6          &kp F7         &kp F8        &kp F9            &kp F10            &none
+&none   &kp F11    &kp F12    &none      &none      &none   &none           &kp PAGE_DOWN  &kp PAGE_UP   &none             &none              &none
+&none   &none      &mkp RCLK  &mkp MCLK  &mkp LCLK  &none   &kp LEFT_ARROW  &kp DOWN       &kp UP_ARROW  &kp RIGHT_ARROW   &none              &none
+&none   &kp GRAVE  &none      &none      &none      &none   &none           &none          &none         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &none
+&none   &none      &none      &none                                                        &none         &none             &none              &none
+&trans  &trans     &trans                                                                                &trans            &trans             &trans
             >;
         };
 
