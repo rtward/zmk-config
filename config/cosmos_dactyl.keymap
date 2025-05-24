@@ -17,18 +17,6 @@
 
 / {
     behaviors {
-        hold_for_layer: hold_for_layer {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_FOR_LAYER";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <250>;
-            flavor = "tap-preferred";
-        };
-
         mod_tap_or_repeat: mod_tap_or_repeat {
             compatible = "zmk,behavior-hold-tap";
             label = "MOD_TAP_OR_REPEAT";
@@ -46,12 +34,12 @@
         default_layer {
             display-name = "default";
             bindings = <
-&kp EQUAL                           &kp N1            &kp N2    &kp N3    &kp N4  &kp N5  &kp N6  &kp N7  &kp N8     &kp N9    &kp N0     &kp MINUS
-&kp TAB                             &kp Q             &kp W     &kp E     &kp R   &kp T   &kp Y   &kp U   &kp I      &kp O     &kp P      &kp BACKSLASH
-&kp ESCAPE                          &kp A             &kp S     &kp D     &kp F   &kp G   &kp H   &kp J   &kp K      &kp L     &kp SEMI   &kp SQT
-&kp LSHFT                           &kp Z             &kp X     &kp C     &kp V   &kp B   &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH   &kp RSHFT
-&none                               &kp GRAVE         &kp NUBS  &kp LALT                                  &kp RALT   &kp LBKT  &kp RBKT   &none
-&mod_tap_or_repeat LCTRL BACKSPACE  &kp LEFT_COMMAND  &mo 1                                                          &mo 1     &kp ENTER  &mt RIGHT_ALT SPACE
+&kp EQUAL                           &kp N1            &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8     &kp N9   &kp N0     &kp MINUS
+&kp TAB                             &kp Q             &kp W   &kp E   &kp R   &kp T   &kp Y   &kp U   &kp I      &kp O    &kp P      &kp BACKSLASH
+&kp ESCAPE                          &kp A             &kp S   &kp D   &kp F   &kp G   &kp H   &kp J   &kp K      &kp L    &kp SEMI   &kp SQT
+&kp LSHFT                           &kp Z             &kp X   &kp C   &kp V   &kp B   &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH   &kp RSHFT
+&none                               &none             &none   &none                                   &none      &none    &none      &none
+&mod_tap_or_repeat LCTRL BACKSPACE  &kp LEFT_COMMAND  &mo 1                                                      &mo 1    &kp ENTER  &mt RIGHT_ALT SPACE
             >;
         };
 
