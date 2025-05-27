@@ -26,6 +26,15 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
         };
+
+        custom_mod_tap: custom_mod_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CUSTOM_MOD_TAP";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <100>;
+        };
     };
 
     keymap {
@@ -34,12 +43,12 @@
         default_layer {
             display-name = "default";
             bindings = <
-&kp EQUAL                           &kp N1            &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8     &kp N9   &kp N0     &kp MINUS
-&kp TAB                             &kp Q             &kp W   &kp E   &kp R   &kp T   &kp Y   &kp U   &kp I      &kp O    &kp P      &kp BACKSLASH
-&kp ESCAPE                          &kp A             &kp S   &kp D   &kp F   &kp G   &kp H   &kp J   &kp K      &kp L    &kp SEMI   &kp SQT
-&kp LSHFT                           &kp Z             &kp X   &kp C   &kp V   &kp B   &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH   &kp RSHFT
-&none                               &none             &none   &none                                   &none      &none    &none      &none
-&mod_tap_or_repeat LCTRL BACKSPACE  &kp LEFT_COMMAND  &mo 1                                                      &mo 1    &kp ENTER  &mt RIGHT_ALT SPACE
+&kp EQUAL                           &kp N1            &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8     &kp N9   &kp N0                           &kp MINUS
+&kp TAB                             &kp Q             &kp W   &kp E   &kp R   &kp T   &kp Y   &kp U   &kp I      &kp O    &kp P                            &kp BACKSLASH
+&kp ESCAPE                          &kp A             &kp S   &kp D   &kp F   &kp G   &kp H   &kp J   &kp K      &kp L    &kp SEMI                         &kp SQT
+&kp LSHFT                           &kp Z             &kp X   &kp C   &kp V   &kp B   &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH                         &kp RSHFT
+&none                               &none             &none   &none                                   &none      &none    &none                            &none
+&mod_tap_or_repeat LCTRL BACKSPACE  &kp LEFT_COMMAND  &mo 1                                                      &mo 1    &custom_mod_tap RIGHT_ALT ENTER  &kp SPACE
             >;
         };
 
