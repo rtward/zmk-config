@@ -17,9 +17,11 @@
         ;
 };
 
+/*
 &trackball_listener {
   status = "okay";
 };
+*/
 
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
