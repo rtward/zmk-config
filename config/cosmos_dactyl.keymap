@@ -44,12 +44,12 @@
         default_layer {
             display-name = "default";
             bindings = <
-&kp EQUAL                           &kp N1            &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8     &kp N9   &kp N0                           &kp MINUS
-&kp TAB                             &kp Q             &kp W   &kp E   &kp R   &kp T   &kp Y   &kp U   &kp I      &kp O    &kp P                            &kp BACKSLASH
-&kp ESCAPE                          &kp A             &kp S   &kp D   &kp F   &kp G   &kp H   &kp J   &kp K      &kp L    &kp SEMI                         &kp SQT
-&kp LSHFT                           &kp Z             &kp X   &kp C   &kp V   &kp B   &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH                         &kp RSHFT
-&none                               &none             &none   &none                                   &none      &none    &none                            &none
-&mod_tap_or_repeat LCTRL BACKSPACE  &kp LEFT_COMMAND  &mo 1                                                      &mo 1    &custom_mod_tap RIGHT_ALT ENTER  &kp SPACE
+&kp EQUAL                           &kp N1            &kp N2  &kp N3        &kp N4  &kp N5  &kp N6  &kp N7  &kp N8     &kp N9   &kp N0                           &kp MINUS
+&kp TAB                             &kp Q             &kp W   &kp E         &kp R   &kp T   &kp Y   &kp U   &kp I      &kp O    &kp P                            &kp BACKSLASH
+&kp ESCAPE                          &kp A             &kp S   &kp D         &kp F   &kp G   &kp H   &kp J   &kp K      &kp L    &kp SEMI                         &kp SQT
+&kp LSHFT                           &kp Z             &kp X   &kp C         &kp V   &kp B   &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH                         &kp RSHFT
+&none                               &none             &none   &kp LEFT_ALT                                  &kp RALT   &none    &none                            &none
+&mod_tap_or_repeat LCTRL BACKSPACE  &kp LEFT_COMMAND  &mo 1                                                            &mo 1    &custom_mod_tap RIGHT_ALT ENTER  &kp SPACE
             >;
         };
 
@@ -60,7 +60,7 @@
 &none   &kp F11    &kp F12             &none       &none          &none   &none           &kp PAGE_DOWN  &kp PAGE_UP   &none             &none              &none
 &none   &none      &mkp RCLK           &mkp MCLK   &mkp LCLK      &none   &kp LEFT_ARROW  &kp DOWN       &kp UP_ARROW  &kp RIGHT_ARROW   &none              &none
 &trans  &kp GRAVE  &kp LC(LEFT_ARROW)  &kp LC(UP)  &kp LC(RIGHT)  &none   &mo 2           &none          &none         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
-&none   &none      &none               &none                                                             &none         &none             &none              &none
+&none   &none      &none               &trans                                                            &trans        &none             &none              &none
 &trans  &trans     &trans                                                                                              &trans            &trans             &trans
             >;
         };
