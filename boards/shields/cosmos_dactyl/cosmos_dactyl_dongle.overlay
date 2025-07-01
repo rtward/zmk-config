@@ -8,10 +8,6 @@
 
 #include <dt-bindings/zmk/matrix_transform.h>
 
-&kscan0 {
-    status = "disabled";
-};
-
 / {
     chosen {
         zmk,kscan = &mock_kscan;
