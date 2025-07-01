@@ -13,3 +13,4 @@ features:
 siblings:
   - cosmos_dactyl_left
   - cosmos_dactyl_right
+  - cosmos_dactyl_dongle
