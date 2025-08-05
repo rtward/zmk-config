@@ -6,7 +6,6 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
@@ -24,7 +23,7 @@
 
         adjust_layer {
             if-layers = <1 2>;
-            then-layer = <2>;
+            then-layer = <3>;
         };
     };
 
@@ -46,7 +45,7 @@
 &kp TAB     &kp Q  &kp W  &kp E  &kp R                &kp T                             &kp Y      &kp U           &kp I      &kp O    &kp P     &kp NON_US_BACKSLASH
 &kp ESCAPE  &kp A  &kp S  &kp D  &kp F                &kp G                             &kp H      &kp J           &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LSHFT   &kp Z  &kp X  &kp C  &kp V                &kp B             &none    &none  &kp N      &kp M           &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                   &none  &none  &mt LCTRL BACKSPACE  &kp LEFT_COMMAND  &mo 1    &mo 1  &kp ENTER  &mt SPACE RALT  &none      &none
+                   &none  &none  &mt LCTRL BACKSPACE  &kp LEFT_COMMAND  &mo 1    &mo 0  &kp ENTER  &mt SPACE RALT  &none      &none
             >;
 
             sensor-bindings =
@@ -66,14 +65,29 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&none   &none            &none            &none            &none            &none                        &none            &none          &none      &none             &none              &none
-&none   &mt F1 NUMBER_1  &mt F2 NUMBER_2  &mt F3 NUMBER_3  &mt F4 NUMBER_4  &mt F5 N5                    &mt F6 NUMBER_6  &mt F7 N7      &mt F8 N8  &mt F9 N9         &mt F10 N0         &none
-&none   &none            &mkp RCLK        &mkp MCLK        &mkp LCLK        &none                        &kp LEFT_ARROW   &kp DOWN       &kp UP     &kp RIGHT         &none              &none
-&trans  &kp GRAVE        &kp LC(LEFT)     &kp LC(UP)       &kp LC(RIGHT)    &none      &trans    &trans  &mo 2            &kp PAGE_DOWN  &kp PG_UP  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
-                         &trans           &trans           &trans           &trans     &trans    &trans  &trans           &trans         &trans     &trans
+&none      &none            &none            &none            &none            &none                        &none            &none          &none      &none             &none              &none
+&kp EQUAL  &mt F1 NUMBER_1  &mt F2 NUMBER_2  &mt F3 NUMBER_3  &mt F4 NUMBER_4  &mt F5 N5                    &mt F6 NUMBER_6  &mt F7 N7      &mt F8 N8  &mt F9 N9         &mt F10 N0         &kp MINUS
+&none      &kp F11          &kp F12          &mkp RCLK        &mkp LCLK        &mkp MCLK                    &kp LEFT_ARROW   &kp DOWN       &kp UP     &kp RIGHT         &none              &none
+&trans     &kp GRAVE        &kp LC(LEFT)     &kp LC(UP)       &kp LC(RIGHT)    &none      &trans    &trans  &none            &kp PAGE_DOWN  &kp PG_UP  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
+                            &trans           &trans           &trans           &trans     &trans    &trans  &trans           &trans         &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        upper_layer {
+            display-name = "upper";
+            bindings = <
+&none      &none            &none            &none            &none            &none                        &none            &none          &none      &none             &none              &none
+&kp EQUAL  &mt F1 NUMBER_1  &mt F2 NUMBER_2  &mt F3 NUMBER_3  &mt F4 NUMBER_4  &mt F5 N5                    &mt F6 NUMBER_6  &mt F7 N7      &mt F8 N8  &mt F9 N9         &mt F10 N0         &kp MINUS
+&none      &kp F11          &kp F12          &mkp RCLK        &mkp LCLK        &mkp MCLK                    &kp LEFT_ARROW   &kp DOWN       &kp UP     &kp RIGHT         &none              &none
+&trans     &kp GRAVE        &kp LC(LEFT)     &kp LC(UP)       &kp LC(RIGHT)    &none      &trans    &trans  &none            &kp PAGE_DOWN  &kp PG_UP  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
+                            &trans           &trans           &trans           &trans     &trans    &trans  &trans           &trans         &trans     &trans
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp PG_UP PG_DN>;
         };
 
         adjust_layer {
@@ -86,11 +100,11 @@
 
             display-name = "adjust";
             bindings = <
-&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                  &none  &none  &none  &none  &none  &none
-&ext_power EP_TOG  &rgb_ug RGB_TOG  &rgb_ug RGB_BRI  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &none                         &none  &none  &none  &none  &none  &none
-&none              &rgb_ug RGB_EFF  &rgb_ug RGB_BRD  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &none                         &none  &none  &none  &none  &none  &none
-&none              &none            &none            &none            &none            &none         &none    &none  &none  &none  &none  &none  &none  &none
-                                    &none            &none            &none            &none         &none    &none  &none  &none  &none  &none
+&none  &none            &none            &none            &none            &none                       &none  &none  &none  &none  &none  &none
+&none  &bt BT_CLR_ALL   &bt BT_CLR       &none            &bt BT_PRV       &bt BT_NXT                  &none  &none  &none  &none  &none  &none
+&none  &rgb_ug RGB_TOG  &rgb_ug RGB_BRI  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &none                       &none  &none  &none  &none  &none  &none
+&none  &rgb_ug RGB_EFF  &rgb_ug RGB_BRD  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &none       &none    &none  &none  &none  &none  &none  &none  &none
+                        &none            &none            &none            &none       &none    &none  &none  &none  &none  &none
             >;
         };
     };
