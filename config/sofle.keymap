@@ -42,11 +42,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp GRAVE   &kp N1  &kp N2  &kp N3  &kp N4               &kp N5                            &kp N6     &kp N7          &kp N8     &kp N9   &kp N0    &kp MINUS
-&kp TAB     &kp Q   &kp W   &kp E   &kp R                &kp T                             &kp Y      &kp U           &kp I      &kp O    &kp P     &kp NON_US_BACKSLASH
-&kp ESCAPE  &kp A   &kp S   &kp D   &kp F                &kp G                             &kp H      &kp J           &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT   &kp Z   &kp X   &kp C   &kp V                &kp B             &none    &none  &kp N      &kp M           &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                    &none   &none   &mt LCTRL BACKSPACE  &kp LEFT_COMMAND  &mo 1    &mo 1  &kp ENTER  &mt SPACE RALT  &none      &none
+&none       &none  &none  &none  &none                &none                             &none      &none           &none      &none    &none     &none
+&kp TAB     &kp Q  &kp W  &kp E  &kp R                &kp T                             &kp Y      &kp U           &kp I      &kp O    &kp P     &kp NON_US_BACKSLASH
+&kp ESCAPE  &kp A  &kp S  &kp D  &kp F                &kp G                             &kp H      &kp J           &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT   &kp Z  &kp X  &kp C  &kp V                &kp B             &none    &none  &kp N      &kp M           &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                   &none  &none  &mt LCTRL BACKSPACE  &kp LEFT_COMMAND  &mo 1    &mo 1  &kp ENTER  &mt SPACE RALT  &none      &none
             >;
 
             sensor-bindings =
@@ -66,11 +66,11 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&none   &kp F1     &kp F2        &kp F3      &kp F4         &kp F5                    &kp F6          &kp F7         &kp F8       &kp F9            &kp F10            &none
-&none   &kp F11    &kp F12       &none       &none          &none                     &none           &kp PAGE_DOWN  &kp PAGE_UP  &none             &none              &none
-&none   &none      &mkp RCLK     &mkp MCLK   &mkp LCLK      &none                     &kp LEFT_ARROW  &kp DOWN       &kp UP       &kp RIGHT         &none              &none
-&trans  &kp GRAVE  &kp LC(LEFT)  &kp LC(UP)  &kp LC(RIGHT)  &none   &trans    &trans  &mo 2           &none          &none        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
-                   &trans        &trans      &trans         &trans  &trans    &trans  &trans          &trans         &trans       &trans
+&none   &none            &none            &none            &none            &none                        &none            &none          &none      &none             &none              &none
+&none   &mt F1 NUMBER_1  &mt F2 NUMBER_2  &mt F3 NUMBER_3  &mt F4 NUMBER_4  &mt F5 N5                    &mt F6 NUMBER_6  &mt F7 N7      &mt F8 N8  &mt F9 N9         &mt F10 N0         &none
+&none   &none            &mkp RCLK        &mkp MCLK        &mkp LCLK        &none                        &kp LEFT_ARROW   &kp DOWN       &kp UP     &kp RIGHT         &none              &none
+&trans  &kp GRAVE        &kp LC(LEFT)     &kp LC(UP)       &kp LC(RIGHT)    &none      &trans    &trans  &mo 2            &kp PAGE_DOWN  &kp PG_UP  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
+                         &trans           &trans           &trans           &trans     &trans    &trans  &trans           &trans         &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
