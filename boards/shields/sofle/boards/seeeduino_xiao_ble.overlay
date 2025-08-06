@@ -44,7 +44,7 @@
 };
 
 &spi3 {
-    compatible = "nordic,nrf-spim";
+    compatible = "nordic,qspi-nor";
     status = "okay";
 
     pinctrl-0 = <&spi3_default>;
