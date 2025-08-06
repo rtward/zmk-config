@@ -66,11 +66,11 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&none      &none            &none            &none            &none            &none                        &none            &none          &none      &none             &none              &none
-&kp EQUAL  &mt F1 NUMBER_1  &mt F2 NUMBER_2  &mt F3 NUMBER_3  &mt F4 NUMBER_4  &mt F5 N5                    &mt F6 NUMBER_6  &mt F7 N7      &mt F8 N8  &mt F9 N9         &mt F10 N0         &kp MINUS
-&none      &kp F11          &kp F12          &mkp RCLK        &mkp LCLK        &mkp MCLK                    &kp LEFT_ARROW   &kp DOWN       &kp UP     &kp RIGHT         &none              &none
-&trans     &kp GRAVE        &kp LC(LEFT)     &kp LC(UP)       &kp LC(RIGHT)    &none      &trans    &trans  &none            &kp PAGE_DOWN  &kp PG_UP  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
-                            &trans           &trans           &trans           &trans     &trans    &trans  &trans           &trans         &trans     &trans
+&none   &none            &none            &none            &none            &none                        &none            &none          &none      &none             &none              &none
+&none   &mt F1 NUMBER_1  &mt F2 NUMBER_2  &mt F3 NUMBER_3  &mt F4 NUMBER_4  &mt F5 N5                    &mt F6 NUMBER_6  &mt F7 N7      &mt F8 N8  &mt F9 N9         &mt F10 N0         &none
+&none   &kp F11          &kp F12          &mkp RCLK        &mkp LCLK        &mkp MCLK                    &kp LEFT_ARROW   &kp DOWN       &kp UP     &kp RIGHT         &none              &none
+&trans  &kp GRAVE        &kp LC(LEFT)     &kp LC(UP)       &kp LC(RIGHT)    &none      &trans    &trans  &none            &kp PAGE_DOWN  &kp PG_UP  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
+                         &trans           &trans           &trans           &trans     &trans    &trans  &trans           &trans         &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -79,11 +79,11 @@
         upper_layer {
             display-name = "upper";
             bindings = <
-&none      &none            &none            &none            &none            &none                        &none            &none          &none      &none             &none              &none
-&kp EQUAL  &mt F1 NUMBER_1  &mt F2 NUMBER_2  &mt F3 NUMBER_3  &mt F4 NUMBER_4  &mt F5 N5                    &mt F6 NUMBER_6  &mt F7 N7      &mt F8 N8  &mt F9 N9         &mt F10 N0         &kp MINUS
-&none      &kp F11          &kp F12          &mkp RCLK        &mkp LCLK        &mkp MCLK                    &kp LEFT_ARROW   &kp DOWN       &kp UP     &kp RIGHT         &none              &none
-&trans     &kp GRAVE        &kp LC(LEFT)     &kp LC(UP)       &kp LC(RIGHT)    &none      &trans    &trans  &none            &kp PAGE_DOWN  &kp PG_UP  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
-                            &trans           &trans           &trans           &trans     &trans    &trans  &trans           &trans         &trans     &trans
+&none   &none      &none            &none            &none            &none                        &none            &none          &none      &none             &none              &none
+&none   &kp EQUAL  &mt F2 NUMBER_2  &mt F3 NUMBER_3  &mt F4 NUMBER_4  &mt F5 N5                    &mt F6 NUMBER_6  &mt F7 N7      &mt F8 N8  &mt F9 N9         &kp MINUS          &none
+&none   &kp F11    &kp F12          &mkp RCLK        &mkp LCLK        &mkp MCLK                    &kp LEFT_ARROW   &kp DOWN       &kp UP     &kp RIGHT         &none              &none
+&trans  &kp GRAVE  &kp LC(LEFT)     &kp LC(UP)       &kp LC(RIGHT)    &none      &trans    &trans  &none            &kp PAGE_DOWN  &kp PG_UP  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
+                   &trans           &trans           &trans           &trans     &trans    &trans  &trans           &trans         &trans     &trans
             >;
 
             sensor-bindings =
