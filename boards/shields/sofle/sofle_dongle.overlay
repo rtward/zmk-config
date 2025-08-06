@@ -4,50 +4,14 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <dt-bindings/led/led.h>
-
 #include "sofle.dtsi"
 
 #include <dt-bindings/zmk/matrix_transform.h>
-
-/* Dummy led strip setup required for underglow to work */
-&pinctrl {
-    spi3_default: spi3_default {
-        group1 {
-            psels = <&gpio0 2>;
-        };
-    };
-};
-
-&spi3 {
-    compatible = "nordic,qspi-nor";
-    status = "okay";
-
-    pinctrl-0 = <&spi3_default>;
-    pinctrl-names = "default";
-
-    led_strip: ws2812@0 {
-        compatible = "worldsemi,ws2812-spi";
-
-        /* SPI */
-        reg = <0>; /* ignored, but necessary for SPI bindings */
-        spi-max-frequency = <4000000>;
-
-        /* WS2812 */
-        chain-length = <0>; /* number of LEDs */
-        spi-one-frame = <0x70>;
-        spi-zero-frame = <0x40>;
-        color-mapping = <LED_COLOR_ID_GREEN
-                         LED_COLOR_ID_RED
-                         LED_COLOR_ID_BLUE>;
-    };
-};
 
 / {
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,sensors = &sensors;
-        zmk,underglow = &led_strip;
     };
 
     mock_kscan: mock_kscan_0 {
