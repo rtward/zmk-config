@@ -10,6 +10,7 @@ include:
   - board: seeeduino_xiao_ble
     shield: cosmos_dactyl_dongle 
     artifact-name: firmware-dactyl_dongle
+    snippet: zmk-usb-logging
   - board: nice_nano_v2
     shield: cosmos_dactyl_left nice_oled
     cmake-args: -DCONFIG_ZMK_POINTING=y -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
