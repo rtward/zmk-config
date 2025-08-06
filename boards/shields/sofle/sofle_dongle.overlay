@@ -11,6 +11,7 @@
 / {
     chosen {
         zmk,kscan = &mock_kscan;
+        zmk,sensors = &sensors;
     };
 
     mock_kscan: mock_kscan_0 {
