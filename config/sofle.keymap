@@ -6,6 +6,7 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
@@ -100,11 +101,11 @@
 
             display-name = "adjust";
             bindings = <
-&none  &none            &none            &none            &none            &none                       &none  &none  &none  &none  &none  &none
-&none  &bt BT_CLR_ALL   &bt BT_CLR       &none            &bt BT_PRV       &bt BT_NXT                  &none  &none  &none  &none  &none  &none
-&none  &rgb_ug RGB_TOG  &rgb_ug RGB_BRI  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &none                       &none  &none  &none  &none  &none  &none
-&none  &rgb_ug RGB_EFF  &rgb_ug RGB_BRD  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &none       &none    &none  &none  &none  &none  &none  &none  &none
-                        &none            &none            &none            &none       &none    &none  &none  &none  &none  &none
+&none  &none            &none            &none            &none            &none                              &none  &none  &none  &none  &none  &none
+&none  &bt BT_CLR_ALL   &bt BT_CLR       &none            &bt BT_PRV       &bt BT_NXT                         &none  &none  &none  &none  &none  &none
+&none  &rgb_ug RGB_TOG  &rgb_ug RGB_BRI  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &ext_power EP_ON                   &none  &none  &none  &none  &none  &none
+&none  &rgb_ug RGB_EFF  &rgb_ug RGB_BRD  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &ext_power EP_OFF  &none    &none  &none  &none  &none  &none  &none  &none
+                        &none            &none            &none            &none              &none    &none  &none  &none  &none  &none
             >;
         };
     };
