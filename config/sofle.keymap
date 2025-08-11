@@ -28,6 +28,18 @@
         };
     };
 
+    behaviors {
+        hold_tap_with_repeat: hold_tap_with_repeat {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP_WITH_REPEAT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -42,11 +54,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&none  &none             &none  &none  &none                &none                             &none           &none      &none      &none    &none           &none
-&none  &kp Q             &kp W  &kp E  &kp R                &kp T                             &kp Y           &kp U      &kp I      &kp O    &kp P           &none
-&none  &kp A             &kp S  &kp D  &kp F                &kp G                             &kp H           &kp J      &kp K      &kp L    &kp SEMI        &none
-&none  &mt LEFT_SHIFT Z  &kp X  &kp C  &kp V                &kp B             &none    &none  &kp N           &kp M      &kp COMMA  &kp DOT  &mt RSHFT FSLH  &none
-                         &none  &none  &mt LCTRL BACKSPACE  &kp LEFT_COMMAND  &mo 1    &mo 2  &mt RALT ENTER  &kp SPACE  &none      &none
+&none  &none             &none  &none  &none                                  &none                             &none           &none      &none      &none    &none           &none
+&none  &kp Q             &kp W  &kp E  &kp R                                  &kp T                             &kp Y           &kp U      &kp I      &kp O    &kp P           &none
+&none  &kp A             &kp S  &kp D  &kp F                                  &kp G                             &kp H           &kp J      &kp K      &kp L    &kp SEMI        &none
+&none  &mt LEFT_SHIFT Z  &kp X  &kp C  &kp V                                  &kp B             &none    &none  &kp N           &kp M      &kp COMMA  &kp DOT  &mt RSHFT FSLH  &none
+                         &none  &none  &hold_tap_with_repeat LCTRL BACKSPACE  &kp LEFT_COMMAND  &mo 1    &mo 2  &mt RALT ENTER  &kp SPACE  &none      &none
             >;
 
             sensor-bindings =
