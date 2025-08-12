@@ -44,7 +44,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "default";
+            display-name = "dflt";
 
             // ------------------------------------------------------------------------------------------------------------
             // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |       |
@@ -54,11 +54,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&none  &none             &none  &none  &none                                  &none                             &none           &none      &none      &none    &none           &none
-&none  &kp Q             &kp W  &kp E  &kp R                                  &kp T                             &kp Y           &kp U      &kp I      &kp O    &kp P           &none
-&none  &kp A             &kp S  &kp D  &kp F                                  &kp G                             &kp H           &kp J      &kp K      &kp L    &kp SEMI        &none
-&none  &mt LEFT_SHIFT Z  &kp X  &kp C  &kp V                                  &kp B             &none    &none  &kp N           &kp M      &kp COMMA  &kp DOT  &mt RSHFT FSLH  &none
-                         &none  &none  &hold_tap_with_repeat LCTRL BACKSPACE  &kp LEFT_COMMAND  &mo 1    &mo 2  &mt RALT ENTER  &kp SPACE  &none      &none
+&none           &none             &none  &none  &none                                  &none                             &none           &none      &none      &none    &none           &none
+&kp TAB         &kp Q             &kp W  &kp E  &kp R                                  &kp T                             &kp Y           &kp U      &kp I      &kp O    &kp P           &kp BACKSLASH
+&kp ESC         &kp A             &kp S  &kp D  &kp F                                  &kp G                             &kp H           &kp J      &kp K      &kp L    &kp SEMI        &kp SQT
+&kp LEFT_SHIFT  &mt LEFT_SHIFT Z  &kp X  &kp C  &kp V                                  &kp B             &none    &none  &kp N           &kp M      &kp COMMA  &kp DOT  &mt RSHFT FSLH  &kp RSHFT
+                                  &none  &none  &hold_tap_with_repeat LCTRL BACKSPACE  &kp LEFT_COMMAND  &mo 1    &mo 2  &mt RALT ENTER  &kp SPACE  &none      &none
             >;
 
             sensor-bindings =
@@ -66,8 +66,8 @@
                 <&inc_dec_kp PG_UP PG_DN>;
         };
 
-        lower_layer {
-            display-name = "lower";
+        num_sym {
+            display-name = "nums";
 
             // TODO: Some binds are waiting for shifted keycode support.
             // ------------------------------------------------------------------------------------------------------------
@@ -78,24 +78,24 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&none  &none                 &none            &none            &none            &none                        &none            &none          &none      &none             &none                     &none
-&none  &mt F1 NUMBER_1       &mt F2 NUMBER_2  &mt F3 NUMBER_3  &mt F4 NUMBER_4  &mt F5 N5                    &mt F6 NUMBER_6  &mt F7 N7      &mt F8 N8  &mt F9 N9         &mt F10 N0                &none
-&none  &kp F11               &kp F12          &mkp RCLK        &mkp LCLK        &mkp MCLK                    &kp LEFT_ARROW   &kp DOWN       &kp UP     &kp RIGHT         &none                     &none
-&none  &mt LEFT_SHIFT GRAVE  &kp LC(LEFT)     &kp LC(UP)       &kp LC(RIGHT)    &none      &trans    &trans  &none            &kp PAGE_DOWN  &kp PG_UP  &kp LEFT_BRACKET  &mt RSHIFT RIGHT_BRACKET  &none
-                             &trans           &trans           &trans           &trans     &trans    &trans  &trans           &trans         &trans     &trans
+&none      &none                 &none            &none            &none            &none                        &none            &none      &none      &none             &none                     &none
+&kp EQUAL  &mt F1 NUMBER_1       &mt F2 NUMBER_2  &mt F3 NUMBER_3  &mt F4 NUMBER_4  &mt F5 N5                    &mt F6 NUMBER_6  &mt F7 N7  &mt F8 N8  &mt F9 N9         &mt F10 N0                &kp MINUS
+&none      &kp F11               &kp F12          &none            &none            &none                        &none            &none      &none      &none             &none                     &none
+&none      &mt LEFT_SHIFT GRAVE  &kp EQUAL        &none            &none            &none      &trans    &trans  &none            &none      &none      &kp LEFT_BRACKET  &mt RSHIFT RIGHT_BRACKET  &none
+                                 &trans           &trans           &trans           &trans     &trans    &trans  &trans           &trans     &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
-        upper_layer {
-            display-name = "upper";
+        move {
+            display-name = "move";
             bindings = <
-&none   &none             &none            &none            &none            &none                         &none            &none          &none      &none             &none                     &none
-&none   &kp EQUAL         &mt F2 NUMBER_2  &mt F3 NUMBER_3  &mt F4 NUMBER_4  &mt F5 N5                     &mt F6 NUMBER_6  &mt F7 N7      &mt F8 N8  &kp MINUS         &kp BACKSLASH             &none
-&none   &kp F11           &kp F12          &mkp RCLK        &mkp LCLK        &mkp MCLK                     &kp LEFT_ARROW   &kp DOWN       &kp UP     &kp RIGHT         &kp SQT                   &none
-&trans  &mt LSHIFT GRAVE  &kp LC(LEFT)     &kp LC(UP)       &kp LC(RIGHT)    &kp ESCAPE  &trans    &trans  &kp TAB          &kp PAGE_DOWN  &kp PG_UP  &kp LEFT_BRACKET  &mt RSHIFT RIGHT_BRACKET  &none
-                          &trans           &trans           &trans           &trans      &trans    &trans  &trans           &trans         &trans     &trans
+&none   &none       &none         &none       &none          &none                        &none           &none          &none        &none      &none  &none
+&none   &kp TAB     &none         &none       &none          &none                        &kp HOME        &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &none  &none
+&none   &kp ESCAPE  &none         &mkp RCLK   &mkp LCLK      &mkp MCLK                    &kp LEFT_ARROW  &kp DOWN       &kp UP       &kp RIGHT  &none  &none
+&trans  &none       &kp LC(LEFT)  &kp LC(UP)  &kp LC(RIGHT)  &none      &trans    &trans  &none           &none          &none        &none      &none  &none
+                    &trans        &trans      &trans         &trans     &trans    &trans  &trans          &trans         &trans       &trans
             >;
 
             sensor-bindings =
@@ -103,7 +103,7 @@
                 <&inc_dec_kp PG_UP PG_DN>;
         };
 
-        adjust_layer {
+        settings {
             // ----------------------------------------------------------------------------------------------------------------------------
             // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
             // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
@@ -111,7 +111,7 @@
             // |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
             //                    |         |         |         |         |         | |      |      |      |       |      |
 
-            display-name = "adjust";
+            display-name = "stgs";
             bindings = <
 &none  &none            &none            &none            &none            &none                              &none  &none  &none  &none  &none  &none
 &none  &bt BT_CLR_ALL   &bt BT_CLR       &none            &bt BT_PRV       &bt BT_NXT                         &none  &none  &none  &none  &none  &none
