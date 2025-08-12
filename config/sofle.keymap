@@ -91,11 +91,11 @@
         move {
             display-name = "move";
             bindings = <
-&none   &none       &none         &none       &none          &none                        &none           &none          &none        &none      &none  &none
-&none   &kp TAB     &none         &none       &none          &none                        &kp HOME        &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &none  &none
-&none   &kp ESCAPE  &none         &mkp RCLK   &mkp LCLK      &mkp MCLK                    &kp LEFT_ARROW  &kp DOWN       &kp UP       &kp RIGHT  &none  &none
-&trans  &none       &kp LC(LEFT)  &kp LC(UP)  &kp LC(RIGHT)  &none      &trans    &trans  &none           &none          &none        &none      &none  &none
-                    &trans        &trans      &trans         &trans     &trans    &trans  &trans          &trans         &trans       &trans
+&none   &none       &none         &none       &none          &none                        &none           &none           &none         &none            &none  &none
+&none   &kp TAB     &none         &none       &none          &none                        &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &none  &none
+&none   &kp ESCAPE  &none         &mkp RCLK   &mkp LCLK      &mkp MCLK                    &kp LEFT_ARROW  &kp DOWN        &kp UP        &kp RIGHT        &none  &none
+&trans  &none       &kp LC(LEFT)  &kp LC(UP)  &kp LC(RIGHT)  &none      &trans    &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none  &none
+                    &trans        &trans      &trans         &trans     &trans    &trans  &trans          &trans          &trans        &trans
             >;
 
             sensor-bindings =
