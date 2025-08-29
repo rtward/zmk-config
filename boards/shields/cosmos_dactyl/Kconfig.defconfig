@@ -1,11 +1,11 @@
 # Copyright (c) 2020 Ryan Cross
 # SPDX-License-Identifier: MIT
 
-if SHIELD_COSMOS_DACTYL_DONGLE
+if SHIELD_COSMOS_DACTYL_LEFT
 
 # Max 16 characters in keyboard name
 config ZMK_KEYBOARD_NAME
-    default "My Board"
+    default "Cosmos Dactyl"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
