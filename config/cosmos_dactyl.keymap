@@ -68,12 +68,12 @@
         movement {
             display-name = "mvmt";
             bindings = <
-&none   &none            &none               &none            &none            &none            &kp F6          &kp F7          &kp F8        &kp F9           &kp F10  &none
-&none   &mt F1 NUMBER_1  &mt F2 NUMBER_2     &mt F3 NUMBER_3  &mt F4 NUMBER_4  &mt F5 N5        &none           &kp PAGE_DOWN   &kp PAGE_UP   &kp F11          &kp F12  &none
-&none   &kp EQUAL        &mkp RCLK           &mkp MCLK        &mkp LCLK        &kp LC(LG(F12))  &kp LEFT_ARROW  &kp DOWN        &kp UP_ARROW  &kp RIGHT_ARROW  &none    &none
-&trans  &kp GRAVE        &kp LC(LEFT_ARROW)  &kp LC(UP)       &kp LC(RIGHT)    &none            &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none    &trans
-&none   &none            &none               &trans                                                                             &trans        &none            &none    &none
-&trans  &trans           &trans                                                                                                               &trans           &trans   &trans
+&none   &none            &none               &none            &none            &none                &kp F6          &kp F7          &kp F8        &kp F9           &kp F10  &none
+&none   &mt F1 NUMBER_1  &mt F2 NUMBER_2     &mt F3 NUMBER_3  &mt F4 NUMBER_4  &mt F5 N5            &none           &kp PAGE_DOWN   &kp PAGE_UP   &kp F11          &kp F12  &none
+&none   &kp EQUAL        &mkp RCLK           &mkp MCLK        &mkp LCLK        &kp C_VOICE_COMMAND  &kp LEFT_ARROW  &kp DOWN        &kp UP_ARROW  &kp RIGHT_ARROW  &none    &none
+&trans  &kp GRAVE        &kp LC(LEFT_ARROW)  &kp LC(UP)       &kp LC(RIGHT)    &none                &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none    &trans
+&none   &none            &none               &trans                                                                                 &trans        &none            &none    &none
+&trans  &trans           &trans                                                                                                                   &trans           &trans   &trans
             >;
         };
 
