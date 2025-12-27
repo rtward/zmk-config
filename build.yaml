@@ -22,3 +22,10 @@ include:
   - board: nice_nano
     shield: sofle_right nice_oled
     artifact-name: firmware-sofle_right
+
+  - board: nice_nano
+    shield: corne_left nice_oled
+    artifact-name: firmware-corne_left
+  - board: nice_nano
+    shield: corne_right nice_oled
+    artifact-name: firmware-corne_right
