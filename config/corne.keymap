@@ -5,6 +5,7 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
@@ -53,10 +54,10 @@
             //                     | CTRL/BKSP | CMD  | RAISE |       | LOWER| ENTER | SPACE |
 
             bindings = <
-&kp TAB         &kp Q             &kp W        &kp E           &kp R                                  &kp T      &kp Y      &kp U      &kp I           &kp O          &kp P           &kp BACKSLASH
-&kp ESC         &kp A             &kp S        &kp D           &kp F                                  &kp G      &kp H      &kp J      &kp K           &kp L          &kp SEMI        &kp SQT
-&kp LEFT_SHIFT  &mt LEFT_SHIFT Z  &mt LCTRL X  &mt LEFT_ALT C  &kp V                                  &kp B      &kp N      &kp M      &mt RALT COMMA  &mt RCTRL DOT  &mt RSHFT FSLH  &kp RSHFT
-                                               &hold_tap_with_repeat LCTRL BACKSPACE  &kp LEFT_COMMAND  &mo 2      &mo 1      &kp ENTER  &kp SPACE
+&kp TAB         &kp Q             &kp W        &kp E                                  &kp R             &kp T    &kp Y  &kp U      &kp I           &kp O          &kp P           &kp BACKSLASH
+&kp ESC         &kp A             &kp S        &kp D                                  &kp F             &kp G    &kp H  &kp J      &kp K           &kp L          &kp SEMI        &kp SQT
+&kp LEFT_SHIFT  &mt LEFT_SHIFT Z  &mt LCTRL X  &mt LEFT_ALT C                         &kp V             &kp B    &kp N  &kp M      &mt RALT COMMA  &mt RCTRL DOT  &mt RSHFT FSLH  &kp RSHFT
+                                               &hold_tap_with_repeat LCTRL BACKSPACE  &kp LEFT_COMMAND  &mo 2    &mo 1  &kp ENTER  &kp SPACE
             >;
         };
 
@@ -70,20 +71,20 @@
             //                     |      |      |      |                   |      |       |       |
 
             bindings = <
-&kp EQUAL  &mt F1 NUMBER_1       &mt F2 NUMBER_2  &mt F3 NUMBER_3  &mt F4 NUMBER_4  &mt F5 N5      &mt F6 NUMBER_6  &mt F7 N7  &mt F8 N8         &mt F9 N9         &mt F10 N0                &kp MINUS
-&none      &kp F11               &kp F12          &none            &none            &none          &none            &none      &kp SINGLE_QUOTE  &kp BACKSLASH     &kp MINUS                 &none
-&none      &mt LEFT_SHIFT GRAVE  &kp EQUAL        &none            &none            &none          &none            &none      &none             &kp LEFT_BRACKET  &mt RSHIFT RIGHT_BRACKET  &none
-                                                  &trans           &trans           &trans         &trans           &trans     &trans
+&kp EQUAL  &mt F1 NUMBER_1       &mt F2 NUMBER_2  &mt F3 NUMBER_3  &mt F4 NUMBER_4  &mt F5 N5    &mt F6 NUMBER_6  &mt F7 N7  &mt F8 N8         &mt F9 N9         &mt F10 N0                &kp MINUS
+&none      &kp F11               &kp F12          &none            &none            &none        &none            &none      &kp SINGLE_QUOTE  &kp BACKSLASH     &kp MINUS                 &none
+&none      &mt LEFT_SHIFT GRAVE  &kp EQUAL        &none            &none            &none        &none            &none      &none             &kp LEFT_BRACKET  &mt RSHIFT RIGHT_BRACKET  &none
+                                                  &trans           &trans           &trans       &trans           &trans     &trans
             >;
         };
 
         move {
             display-name = "move";
             bindings = <
-&none   &kp TAB     &none         &none       &none          &none          &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &none  &none
-&none   &kp ESCAPE  &none         &mkp RCLK   &mkp LCLK      &mkp MCLK      &kp LEFT_ARROW  &kp DOWN        &kp UP        &kp RIGHT        &none  &none
-&trans  &none       &kp LC(LEFT)  &kp LC(UP)  &kp LC(RIGHT)  &none          &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none  &none
-                                  &trans      &trans         &trans         &trans          &kp ENTER       &trans
+&none   &kp TAB     &none         &none       &none          &none        &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &none  &none
+&none   &kp ESCAPE  &none         &mkp RCLK   &mkp LCLK      &mkp MCLK    &kp LEFT_ARROW  &kp DOWN        &kp UP        &kp RIGHT        &none  &none
+&trans  &none       &kp LC(LEFT)  &kp LC(UP)  &kp LC(RIGHT)  &none        &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none  &none
+                                  &trans      &trans         &trans       &trans          &kp ENTER       &trans
             >;
         };
 
@@ -96,10 +97,10 @@
 
             display-name = "stgs";
             bindings = <
-&none  &bt BT_CLR_ALL   &bt BT_CLR       &none            &bt BT_PRV       &bt BT_NXT         &none  &none  &none  &none  &none  &none
-&none  &rgb_ug RGB_TOG  &rgb_ug RGB_BRI  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &ext_power EP_ON   &none  &none  &none  &none  &none  &none
-&none  &rgb_ug RGB_EFF  &rgb_ug RGB_BRD  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &ext_power EP_OFF  &none  &none  &none  &none  &none  &none
-                                         &none            &none            &none              &none  &none  &none
+&none       &bt BT_CLR_ALL   &bt BT_CLR       &none            &bt BT_PRV       &bt BT_NXT           &none  &none  &none  &none  &none  &none
+&bl BL_TOG  &rgb_ug RGB_TOG  &rgb_ug RGB_BRI  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &ext_power EP_ON     &none  &none  &none  &none  &none  &none
+&none       &rgb_ug RGB_EFF  &rgb_ug RGB_BRD  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &ext_power EP_OFF    &none  &none  &none  &none  &none  &none
+                                              &none            &none            &none                &none  &none  &none
             >;
         };
     };
