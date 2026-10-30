@@ -1,0 +1,5 @@
+// Per-key LEDs (21 per side) plus the 6 underglow LEDs.
+// The stock Corne overlay only drives the first 10.
+&led_strip {
+    chain-length = <27>;
+};
